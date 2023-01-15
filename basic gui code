@@ -1,0 +1,38 @@
+from  tkinter import *
+from tkinter import messagebox
+def handle_login():
+    em=email_entry.get()
+    pas=password_entry.get()
+    if em=='zusoo@gmail.com' and pas=='123456':
+        messagebox.showinfo('Login Successfully')
+    else:
+        messagebox.showerror('Login Fail')
+
+root = Tk()
+root.title ("Login ZUSOO From")
+root.iconbitmap("md.jpg")
+root.minsize(350,500)
+root.configure(background='green')
+img= root.iconbitmap("flip.jpg")
+txt=Label(root,text="ZUSOOKART",
+fg='white',bg='green')
+txt.pack()
+txt.config(font=('verdana',24))
+
+email_lbl=Label(root,text="Enter Email",fg='white',bg='green')
+email_lbl.pack(pady=(20,10))
+email_lbl.config(font=('verdana',15))
+email_entry=Entry(root, width=50)
+email_entry.pack(ipady=6)
+
+password_lbl=Label(root,text="Enter Password",fg='white',bg='green')
+password_lbl.pack()
+password_lbl.config(font=('verdana',15))
+password_entry=Entry(root,width=50)
+password_entry.pack(ipady=6)
+
+btn=Button(root,text="Login Here",fg='white',bg='green',width=22,command=handle_login)
+btn.pack(pady=(15,15))
+btn.config(font=('verdana',18))
+
+root.mainloop()
